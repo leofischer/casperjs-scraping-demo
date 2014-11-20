@@ -1,0 +1,12 @@
+{
+  "name": "casperjs-demo.js",
+  "description":"Scrape a few different views and write to files.",
+  "version": "0.1.0",
+  "dependencies": {
+    "casperjs": ""
+  },
+  "devDependencies": {
+    "mocha":">= 1.0.0",
+    "should":">= 4.0.4"
+  }
+}
