@@ -10,7 +10,7 @@ shspawn = (command) ->
 
 filters = ['paid', 'refunded', 'pending']
 spawn_scraper = (filter)->
-  scraper = spawn "casperjs", ["src/admin.coffee", filter]
+  scraper = spawn "casperjs", ["--ssl-protocol=TLSv1", "src/admin.coffee", filter]
 
   scraper.stdout.on 'data', (data)->
     console.log data.toString()

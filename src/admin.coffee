@@ -1,4 +1,4 @@
-base_path = "/home/jack/api/casperjs-demo"
+base_path = "/home/jack/api/casperjs-scraping-demo"
 base_url = "https://admin.conekta.io"
 secrets = require "#{base_path}/config/secrets"
 paid_charges = []
@@ -18,6 +18,8 @@ casper.userAgent('Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:32.0) Gecko/20100101 
 casper.viewport(1366, 768)
 filter = casper.cli.get(0)
 
+casper.wait 1000, ->
+  #do nothing
 
 casper.then ->
   @echo "filling login form"
@@ -36,7 +38,6 @@ for i in [0..1]
   casper.wait 5000, ->
     j += 1
     @echo "looping through data rows. index: #{j}"
-    @scrollToBottom()
     dates = @getElementsInfo '#charges tbody tr td:nth-child(1)'
     types = @getElementsInfo '#charges tbody tr td:nth-child(2)'
     messages = @getElementsInfo '#charges tbody tr td:nth-child(4)'
